@@ -1,4 +1,5 @@
-from utils import User, Generator
+from utilites import Generator
+from api_methods import User
 import pytest
 import allure
 

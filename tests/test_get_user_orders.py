@@ -1,7 +1,7 @@
 import endpoints
 from data import Message
-from utils import Request, Order
 import allure
+from api_methods import Request, Order
 
 
 class TestGetUserOrders:

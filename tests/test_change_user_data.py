@@ -1,7 +1,7 @@
 import allure
 import endpoints
 from data import UserData, Message
-from utils import Request, User
+from api_methods import Request, User
 import pytest
 
 
@@ -51,9 +51,9 @@ class TestChangeUserData:
             "email": existing_user["user"]["email"]
             }
         response = Request.patch(endpoints.USER, created_user.get("accessToken"), payload)
+        User.delete(existing_user.get("accessToken"))
         assert response.status_code == 403, f'Ожидалось: 403 Forbidden, получено {response.text}'
         assert response.json().get("message") == Message.email_exists, f'Ожидалось {Message.email_exists}, получено {response.json().get("message")}'
-        User.delete(existing_user.get("accessToken"))
 
     @allure.title('200 OK успешная отправка инструкции с кодом для восстановления пароля пользователя.')
     @allure.description('Создаем пользователя фикстурой created_user.'

@@ -1,6 +1,7 @@
 import endpoints
 from data import Message
-from utils import Request, Generator, Order
+from utilites import Generator
+from api_methods import Request, Order
 import allure
 import pytest
 

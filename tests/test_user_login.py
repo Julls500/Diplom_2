@@ -1,9 +1,9 @@
 import allure
 import endpoints
 from data import Message
-from utils import Funcs, Request
 import pytest
-
+from utilites import Funcs
+from api_methods import Request
 
 class TestLogin:
 
